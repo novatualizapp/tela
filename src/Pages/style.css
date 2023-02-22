@@ -1,0 +1,10 @@
+.alert-image img {
+    width: 20px;
+    padding: 2px;
+    float: left;
+}
+
+p {
+    text-align: justify !important;
+    font-size: 18px;
+}
