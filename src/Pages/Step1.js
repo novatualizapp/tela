@@ -7,13 +7,12 @@ import Radio from '@material-ui/core/Radio';
 import alertify from 'alertifyjs';
 import Loader from '../Components/Loader';
 import logo from '../Assets/Images/logo1.png'
-import './fundo.css'
 
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
         flexWrap: 'wrap',
-        backgroundColor: '#1b6eb4',
+        background: '#1b6eb4',
     },
     textField: {
         // marginLeft: theme.spacing(1),
