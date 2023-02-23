@@ -73,9 +73,9 @@ img.logo {
 }
 
 .MuiInputBase-input, .MuiInput-input {
-  color:#FFF !important;
+  color:#000 !important;
 }
  
 .MuiRadio-colorSecondary.Mui-checked {
-  color:#FFF !important;
+  color:#000 !important;
 }
