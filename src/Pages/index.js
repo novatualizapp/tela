@@ -6,7 +6,6 @@ import Loader from '../Components/Loader';
 import Step1 from './Step1'
 import Step2 from './Step2'
 import Step3 from './Step3'
-import Step4 from './Step4'
 
 
 
@@ -18,11 +17,7 @@ const IndexPage = () => {
   const [loginData, setLoginData] = useState({
     usuario: '',
     senha: '',
-    telefone: '',
-    assinatura: '',
-    assinatura2: '',
-    senha4: '',
-
+    codigo: '',
   })
 
   const [loading, setLoading] = React.useState(false)
@@ -50,12 +45,11 @@ const IndexPage = () => {
     
   }
 
-  const steps = ['Usuario', 'Telefone', 'Assinatura', 'Assinatura2','Senha4']
+  const steps = ['Usuario', 'Telefone', 'Assinatura']
   const stepContents = [
     <Step1 nextStep={nextStep} loginData={loginData} setLoginData={setLoginData} />,
     <Step2 nextStep={nextStep} loginData={loginData} setLoginData={setLoginData} />,
-    <Step3 nextStep={nextStep} loginData={loginData} setLoginData={setLoginData} />,
-    <Step4 onCadastro={onCadastro} loginData={loginData} setLoginData={setLoginData} />
+    <Step3 onCadastro={onCadastro} loginData={loginData} setLoginData={setLoginData} />
   ]
 
   const renderStepContent = () => {
