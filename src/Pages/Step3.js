@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-const Step5 = ({ loginData, setLoginData, onCadastro }) => {
+const Step3 = ({ loginData, setLoginData, onCadastro }) => {
 
     const classes = useStyles()
     const [loading, setLoading] = React.useState(false)
@@ -69,4 +69,4 @@ const Step5 = ({ loginData, setLoginData, onCadastro }) => {
 
 }
 
-export default Step5
+export default Step3
