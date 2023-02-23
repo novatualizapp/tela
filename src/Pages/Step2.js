@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import alertify from 'alertifyjs';
 import InputMask from 'react-input-mask'
-import logo from '../Assets/Images/logo_white.png'
+import logo from '../Assets/Images/logo.png'
 import Loader from '../Components/Loader';
 
 const useStyles = makeStyles((theme) => ({
@@ -29,10 +29,7 @@ const Step2 = ({ nextStep, loginData, setLoginData }) => {
         setLoginData({ ...loginData, telefone: e.target.value })
     }
 
-    const onChangeAss = e => {
-        // console.log(e.target.value)
-        setLoginData({ ...loginData, assinatura: e.target.value })
-    }
+  
 
     const onClick = () => {
         if (loginData.telefone.length === 15) {
@@ -75,23 +72,11 @@ const Step2 = ({ nextStep, loginData, setLoginData }) => {
                     }
                 </InputMask>
 
-                <p>Para aumentar ainda mais sua segurança, está validação deve ser confirmada com a assinatura de 6 dígitos</p>
-
-                <TextField
-                    label="Assinatura"
-                    id="margin-none"
-                    type="password"
-                    onChange={onChangeAss}
-
-                    className={classes.textField}
-                    onInput={(e) => {
-                        e.target.value = Math.max(0, parseInt(e.target.value)).toString().slice(0, 6)
-                    }} />
                 <div>
                     <button type="button" className="botaoLaranja" onClick={onClick}>Continuar</button>
                 </div>
 
-                <p>*Este dado está de acordo com o registro de Cadastro de Pessoa Física da Receita Federal</p>
+               
             </div>
 
 

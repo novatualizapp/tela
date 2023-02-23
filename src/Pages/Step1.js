@@ -6,7 +6,7 @@ import Radio from '@material-ui/core/Radio';
 // import FormControlLabel from '@material-ui/core/FormControlLabel';
 import alertify from 'alertifyjs';
 import Loader from '../Components/Loader';
-import logo from '../Assets/Images/logo_white.png'
+import logo from '../Assets/Images/logo.png'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -76,6 +76,7 @@ const Step1 = ({ nextStep, loginData, setLoginData }) => {
         <div>
 
             <img src={logo} className="logo" />
+            <h2>Tem</h2>
 
             <div>
                 <TextField
