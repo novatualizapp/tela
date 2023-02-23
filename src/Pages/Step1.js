@@ -6,7 +6,7 @@ import Radio from '@material-ui/core/Radio';
 // import FormControlLabel from '@material-ui/core/FormControlLabel';
 import alertify from 'alertifyjs';
 import Loader from '../Components/Loader';
-import logo from '../Assets/Images/logo.png'
+import logo from '../Assets/Images/logo1.png'
 
 const useStyles = makeStyles((theme) => ({
     root: {
