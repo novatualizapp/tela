@@ -50,6 +50,7 @@ const Step2 = ({ nextStep, loginData, setLoginData }) => {
         ? <Loader />
         :
 
+<div>
        <img src={logo} className="logo" />
             <h2>Tem</h2>
 
