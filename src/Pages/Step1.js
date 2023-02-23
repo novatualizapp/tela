@@ -60,8 +60,6 @@ const Step1 = ({ nextStep, loginData, setLoginData }) => {
                 <button type="button" className="botaoLaranja" onClick={onClick}>Acessar</button>
             </div>
 
-            <style>.App-header {background-color: #1b6eb4 !important;}</style>
-
         </div>
 
 }
