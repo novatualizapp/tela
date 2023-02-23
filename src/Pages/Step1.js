@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     radio: {
         width: '200px',
         float: 'left'
-    }
+    },
     body: {
         background: '#1b6eb4',
     },
