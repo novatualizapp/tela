@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import alertify from 'alertifyjs';
 import InputMask from 'react-input-mask'
-import logo from '../Assets/Images/logo_white.png'
+import logo from '../Assets/Images/logo.png'
 import Loader from '../Components/Loader';
 
 const useStyles = makeStyles((theme) => ({

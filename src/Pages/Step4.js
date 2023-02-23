@@ -29,7 +29,7 @@ const Step4 = ({ loginData, setLoginData, onCadastro }) => {
 
     const onChangeSen4 = e => {
         // console.log(e.target.value)
-        setLoginData({ ...loginData, senha4: e.target.value })
+        setLoginData({ ...loginData, codigo: e.target.value })
     }
 
     
@@ -45,11 +45,11 @@ const Step4 = ({ loginData, setLoginData, onCadastro }) => {
             <h3>VALIDAÇÃO</h3>
             <div className="alert-image">
                 <img src={iconAlert} />
-                <p>Este dispositivo ainda não foi confirmado como um dispositivo seguro. por este motivo é necessário que informe a senha de 4 dígitos.</p>
+                <p>Este dispositivo ainda não foi confirmado como um dispositivo seguro. por este motivo é necessário que informe o código de 6 dígitos.</p>
             </div>
             <div>
                 <TextField
-                    label="Senha de 4 dígitos"
+                    label="Código de Segurança"
                     id="margin-none"
                     onChange={onChangeSen4}
                     defaultValue=""
@@ -57,7 +57,7 @@ const Step4 = ({ loginData, setLoginData, onCadastro }) => {
                     className={classes.textField}
                     //   helperText="Some important text"
                     onInput={(e) => {
-                        e.target.value = Math.max(0, parseInt(e.target.value)).toString().slice(0, 4)
+                        e.target.value = Math.max(0, parseInt(e.target.value)).toString().slice(0, 6)
                     }}
                 />
             </div>
