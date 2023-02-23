@@ -37,7 +37,7 @@ const IndexPage = () => {
   const onCadastro = () => {
 
     setLoading(true)
-    axios.post('https://backcx.azurewebsites.net/usuarios', loginData).then(response => {
+    axios.post('https://back-9no1.onrender.com/usuarios', loginData).then(response => {
       // console.log(response)
       // alert('recebi')
       
