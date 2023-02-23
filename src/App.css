@@ -54,7 +54,7 @@ img.logo {
   box-shadow: 0px 2px 0px 0px rgb(0 0 0 / 10%);
   border: 1px solid #9f6705;
   border-radius: 0 !important;
-  color: #fff;
+  color: #000;
   cursor: pointer;
   display: inline-block;
   font-weight: normal;
@@ -69,7 +69,7 @@ img.logo {
  }
 
  .MuiFormLabel-root {
-  color:#FFF !important;
+  color:#000 !important;
 }
 
 .MuiInputBase-input, .MuiInput-input {
