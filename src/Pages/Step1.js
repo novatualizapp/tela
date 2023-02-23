@@ -24,12 +24,6 @@ const useStyles = makeStyles((theme) => ({
         width: '200px',
         float: 'left'
     },
-    body: {
-        background: '#1b6eb4',
-    },
-    App-header: {
-        backgroundColor: '#000'
-    },
 }));
 
 
@@ -65,6 +59,12 @@ const Step1 = ({ nextStep, loginData, setLoginData }) => {
             <div>
                 <button type="button" className="botaoLaranja" onClick={onClick}>Acessar</button>
             </div>
+
+            <style>
+.App-header {
+  color: #1b6eb4 !important;
+}
+</style>
 
         </div>
 
