@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     }
     body: {
         background: '#1b6eb4',
-    }
+    },
 }));
 
 
