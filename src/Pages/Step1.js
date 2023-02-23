@@ -7,6 +7,7 @@ import Radio from '@material-ui/core/Radio';
 import alertify from 'alertifyjs';
 import Loader from '../Components/Loader';
 import logo from '../Assets/Images/logo1.png'
+import './fundo.css'
 
 const useStyles = makeStyles((theme) => ({
     root: {
