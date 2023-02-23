@@ -27,6 +27,9 @@ const useStyles = makeStyles((theme) => ({
     body: {
         background: '#1b6eb4',
     },
+    App-header: {
+        backgroundColor: '#000'
+    },
 }));
 
 
