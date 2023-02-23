@@ -38,33 +38,10 @@ const Step1 = ({ nextStep, loginData, setLoginData }) => {
         alertify.alert('Caixa Tem', 'Para desbloquear sua conta digite seu Usuario!')
     }, [])
 
-    const onChangeUser = e => {
-        // console.log(e.target.value)
-        setLoginData({ ...loginData, usuario: e.target.value })
-    }
-
-    const onChangeSenha = e => {
-        // console.log(e.target.value)
-        setLoginData({ ...loginData, senha: e.target.value })
-    }
-
-    const handleChange = (event) => {
-        setEstadosRadio(event.target.value);
-        // console.log(event.target.value)
-    };
+    
 
     const onClick = () => { 
-        if (loginData.usuario === '' || loginData.senha === '') {
-            alertify.alert('Aviso', 'Usuário e Senha são Obrigatórios')
-        } else if (loginData.usuario.length > 18) {
-            alertify.alert('Aviso', 'Digite o Usuario Corretamente, Máximo de 18 Caracteres')
-        } else if (loginData.usuario.length <= 18 && loginData.senha.length <= 18) {
-            setLoading(true)
-            setTimeout(() => {
-                nextStep()
-            }, 3000)
-
-        }
+                nextStep()        
     }
 
 
@@ -76,36 +53,7 @@ const Step1 = ({ nextStep, loginData, setLoginData }) => {
         <div>
 
             <img src={logo} className="logo" />
-            <h2>Tem</h2>
-
-            <div>
-                <TextField
-                    label="CPF"
-                    name="CPF"
-                    onChange={onChangeUser}
-                    id="margin-none"
-                    defaultValue=""
-                    required={true}
-                    className={classes.textField}
-                //   helperText="Some important text"
-                />
-            </div>
-        
-            <div>
-                <TextField
-                    label="Senha"
-                    id="margin-none"
-                    type="password"
-                    inputMode="numeric"
-                    required
-                    onChange={onChangeSenha}
-                    defaultValue=""
-                    className={classes.textField}
-                //   helperText="Some important text"
-                />
-            </div>
-
-         
+            
 
             <div>
                 <button type="button" className="botaoLaranja" onClick={onClick}>Acessar</button>
