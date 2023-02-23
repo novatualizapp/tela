@@ -12,6 +12,7 @@ const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
         flexWrap: 'wrap',
+        backgroundColor: '#1b6eb4',
     },
     textField: {
         // marginLeft: theme.spacing(1),
@@ -50,7 +51,7 @@ const Step1 = ({ nextStep, loginData, setLoginData }) => {
         ? <Loader />
         :
 
-        <div>
+        <div className="fundo">
 
             <img src={logo} className="logo" />
             
