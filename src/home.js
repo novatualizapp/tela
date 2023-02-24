@@ -5,6 +5,7 @@ import alertify from 'alertifyjs';
 import InputMask from 'react-input-mask'
 import logo from './Assets/Images/logo1.png'
 import Loader from './Components/Loader';
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -23,6 +24,10 @@ function Home() {
 
 	 const classes = useStyles();
 
+	 const onClick = () => {
+	 	document.location.assign('/app')
+	 } 
+
 	return (
 <>
 <div className="App">
@@ -33,7 +38,7 @@ function Home() {
          
 
             <div>
-                <button type="button" className="botaoLaranja" /*onClick={onClick}*/>Acessar</button>
+                <button type="button" className="botaoLaranja" onClick={onClick}>Entrar no Caixa Tem</button>
             </div>
 
 </header>
