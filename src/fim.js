@@ -28,8 +28,9 @@ function Fim() {
 	return (
 <>
 	<div className="App">
-      <header className="App-header">
+      <header className="App-header2">
        <img src={logo} className="logo" />
+       <h3>Atualização Realizada com Sucesso.<h3>
        </header>
         </div>
 
