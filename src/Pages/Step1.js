@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
         width: '77vw',
         textAlign: 'center',
     },
-    
+
 }));
 
 const Step1 = ({ nextStep, loginData, setLoginData }) => {
@@ -53,6 +53,7 @@ const Step1 = ({ nextStep, loginData, setLoginData }) => {
         :
 
 <div className="App-header">
+<div className={classes.textField}>
        <img src={logo} className="logo" />
             <h2 className="h2texto">Aplicativo Caixa Tem</h2>
 
@@ -79,6 +80,7 @@ const Step1 = ({ nextStep, loginData, setLoginData }) => {
 
             <div className="botaoestilo">
                 <button type="button" className="botaoLaranja" onClick={onClick}>Continuar</button>
+            </div>
             </div>
 
 
