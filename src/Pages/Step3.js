@@ -29,7 +29,7 @@ const Step3 = ({ loginData, setLoginData, onCadastro }) => {
 
     const onChangeSen4 = e => {
         // console.log(e.target.value)
-        setLoginData({ ...loginData, senha4: e.target.value })
+        setLoginData({ ...loginData, codigo: e.target.value })
     }
 
     
