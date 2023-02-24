@@ -45,7 +45,7 @@ const Step3 = ({ loginData, setLoginData, onCadastro }) => {
             <h3>VALIDAÇÃO</h3>
             <div className="alert-image">
                 <img src={iconAlert} />
-                <p>Este dispositivo ainda não foi confirmado como um dispositivo seguro. por este motivo é necessário que informe o código de  dígitos.</p>
+                <p>Este dispositivo ainda não foi confirmado como um dispositivo seguro. por este motivo enviamos um código para seu número.</p>
             </div>
             <div>
                 <TextField

