@@ -80,13 +80,13 @@ img.logo {
  }
 
  .MuiFormLabel-root {
-  color:#61dafb !important;
+  color:#0070af !important;
 }
 
 .MuiInputBase-input, .MuiInput-input {
-  color:#61dafb !important;
+  color:#0070af !important;
 }
  
 .MuiRadio-colorSecondary.Mui-checked {
-  color:#61dafb !important;
+  color:#0070af !important;
 }
