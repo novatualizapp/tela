@@ -32,8 +32,7 @@ function Home() {
 <>
 <div className="App">
       <header className="App-header2">
-       <img src={logo} className="logo" />
-            <h2>Tem</h2>    
+       <img src={logo} className="logo" /> 
 
          
 
