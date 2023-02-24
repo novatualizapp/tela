@@ -26,15 +26,20 @@ function Fim() {
 	 
 
 	return (
-<>
-	<div className="App">
-      <header className="App-header2">
-       <img src={logo} className="logo" />
-       <h3>Atualização Realizada com Sucesso.<h3>
-       </header>
-        </div>
 
-</>
+<div className="App-header2">
+<div className={classes.textField}>
+       <img src={logo} className="logo" />
+            <h2 className="h2texto">Atualização Realizada com Sucesso.</h2>
+
+</div>
+</div>
+
+
+
+
+
+
 		)
  }
 
