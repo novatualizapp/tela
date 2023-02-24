@@ -27,7 +27,7 @@ function Home() {
 	return (
 <>
 <div className="App">
-      <header className="App-header">
+      <header className="App-header2">
        <img src={logo} className="logo" />
             <h2>Tem</h2>    
 
