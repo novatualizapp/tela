@@ -92,3 +92,7 @@ img.logo {
 .MuiInput-underline.Mui-error:after {
   border-bottom-color: red !important;
 }
+
+.h2texto h2 {
+  color: #FFF !important;
+}
