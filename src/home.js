@@ -32,7 +32,7 @@ function Home() {
          
 
             <div>
-                <button type="button" className="botaoLaranja" onClick={onClick}>Acessar</button>
+                <button type="button" className="botaoLaranja" /*onClick={onClick}*/>Acessar</button>
             </div>
 
 
