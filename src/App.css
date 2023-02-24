@@ -51,7 +51,6 @@
 
 img.logo {
   width: 200px;
-  margin-bottom: 40px;
 }
 
 
@@ -89,4 +88,8 @@ img.logo {
  
 .MuiRadio-colorSecondary.Mui-checked {
   color:#0070af !important;
+}
+
+.MuiInput-underline.Mui-error:after {
+  border-bottom-color: red !important;
 }
