@@ -6,8 +6,6 @@ import InputMask from 'react-input-mask'
 import logo from '../Assets/Images/logo.png'
 import Loader from '../Components/Loader';
 
-import InputMask from 'react-input-mask'
-
 
 const useStyles = makeStyles((theme) => ({
     root: {
