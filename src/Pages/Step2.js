@@ -5,6 +5,7 @@ import alertify from 'alertifyjs';
 import InputMask from 'react-input-mask'
 import logo from '../Assets/Images/logo.png'
 import Loader from '../Components/Loader';
+import './fundo2.css'
 
 const useStyles = makeStyles((theme) => ({
     root: {
