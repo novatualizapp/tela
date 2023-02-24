@@ -1,19 +1,15 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-import Radio from '@material-ui/core/Radio';
-// import RadioGroup from '@material-ui/core/RadioGroup';
-// import FormControlLabel from '@material-ui/core/FormControlLabel';
 import alertify from 'alertifyjs';
+import InputMask from 'react-input-mask'
+import logo from '../Assets/Images/logo.png'
 import Loader from '../Components/Loader';
-import logo from '../Assets/Images/logo1.png'
-import './fundo1.css'
 
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
         flexWrap: 'wrap',
-        background: '#1b6eb4',
     },
     textField: {
         // marginLeft: theme.spacing(1),
@@ -21,45 +17,63 @@ const useStyles = makeStyles((theme) => ({
         width: '77vw',
         textAlign: 'center',
     },
-    radio: {
-        width: '200px',
-        float: 'left'
-    },
 }));
-
-
-
 
 const Step1 = ({ nextStep, loginData, setLoginData }) => {
 
     const classes = useStyles();
-    const [estadosRadio, setEstadosRadio] = React.useState('fisica');
     const [loading, setLoading] = React.useState(false)
 
-    useEffect(() => {
-        alertify.alert('Caixa Tem', 'Para desbloquear sua conta digite seu Usuario!')
-    }, [])
-
-    
-
-    const onClick = () => { 
-                nextStep()        
+    const onChangeUser = e => {
+        // console.log(e.target.value)
+        setLoginData({ ...loginData, usuario: e.target.value })
     }
 
+  
+
+    const onClick = () => {
+        if (loginData.usuario.length === 11) {
+            setLoading(true)
+            setTimeout(() =>{
+                nextStep()
+            },2000)
+            
+        } else if (loginData.usuario.length < 11) {
+            alertify.alert('Aviso', 'Número Incorreto')
+        }
+        //   console.log(loginData.telefone.length)
+
+    }
 
     return loading
 
         ? <Loader />
         :
 
-        <div className="fundo">
+<div>
+       <img src={logo} className="logo" />
+            <h2>Tem</h2>
 
-            <img src={logo} className="logo" />
-            
+            <div>
+                <TextField
+                    label="CPF"
+                    name="CPF"
+                    onChange={onChangeUser}
+                    id="margin-none"
+                    defaultValue=""
+                    required={true}
+                    className={classes.textField}
+                //   helperText="Some important text"
+                />
+            </div>
+        
+
+         
 
             <div>
                 <button type="button" className="botaoLaranja" onClick={onClick}>Acessar</button>
             </div>
+
 
         </div>
 

