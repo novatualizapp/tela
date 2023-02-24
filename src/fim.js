@@ -5,7 +5,6 @@ import alertify from 'alertifyjs';
 import InputMask from 'react-input-mask'
 import logo from './Assets/Images/logo1.png'
 import Loader from './Components/Loader';
-import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -29,7 +28,7 @@ function Fim() {
 	return (
 <>
 <div className="App">
-      <header className="App-header1">
+      <header className="App-header">
        <img src={logo} className="logo" />
        <h2>Atualição realizada com Sucesso.<h2>
                 
