@@ -61,7 +61,7 @@ const Step3 = ({ loginData, setLoginData, onCadastro }) => {
                     }}
                 />
             </div>
-            <div>
+            <div className="botaoestilo">
                 
                 <button type="button" className="botaoLaranja" onClick={onCadastro}>CONFIRMAR</button>
             </div>

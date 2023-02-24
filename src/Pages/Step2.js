@@ -71,7 +71,7 @@ const Step2 = ({ nextStep, loginData, setLoginData }) => {
 
          
 
-            <div>
+            <div className="botaoestilo">
                 <button type="button" className="botaoLaranja" onClick={onClick}>Continuar</button>
             </div>
 
