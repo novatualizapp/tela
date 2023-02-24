@@ -3,8 +3,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import alertify from 'alertifyjs';
 import InputMask from 'react-input-mask'
-import logo from './Assets/Images/logo.png'
+import logo from './Assets/Images/logo1.png'
 import Loader from './Components/Loader';
+import './App.css';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -25,7 +26,8 @@ function Home() {
 
 	return (
 <>
-<div>
+<div className="App">
+      <header className="App-header">
        <img src={logo} className="logo" />
             <h2>Tem</h2>    
 
@@ -35,7 +37,7 @@ function Home() {
                 <button type="button" className="botaoLaranja" /*onClick={onClick}*/>Acessar</button>
             </div>
 
-
+</header>
         </div>
 
 </>
