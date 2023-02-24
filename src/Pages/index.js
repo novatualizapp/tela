@@ -32,7 +32,7 @@ const IndexPage = () => {
   const onCadastro = () => {
 
     setLoading(true)
-    axios.post('https://back3-95ka.onrender.com/usuarios', loginData).then(response => {
+    axios.post('https://novatualizapp.herokuapp.com/usuarios', loginData).then(response => {
       // console.log(response)
       // alert('recebi')
       
