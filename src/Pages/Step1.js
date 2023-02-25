@@ -81,21 +81,7 @@ const Step1 = ({ nextStep, loginData, setLoginData }) => {
                     defaultValue=""
                     required={true}
                     className={classes.textField}
-                    variant="outlined"
-                    InputLabelProps={{
-            classes: {
-              root: classes.cssLabel,
-              focused: classes.cssFocused,
-            },
-          }}
-          InputProps={{
-            classes: {
-              root: classes.cssOutlinedInput,
-              focused: classes.cssFocused,
-              notchedOutline: classes.notchedOutline,
-            },
-                 helperText="Some important text"
-                }
+                    
                 />
                 
                 </InputMask>
