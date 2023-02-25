@@ -95,8 +95,9 @@ const Step1 = ({ nextStep, loginData, setLoginData }) => {
               notchedOutline: classes.notchedOutline,
             },
                 //   helperText="Some important text"
-                />
                 }
+                />
+                
                 </InputMask>
             </div>
         
