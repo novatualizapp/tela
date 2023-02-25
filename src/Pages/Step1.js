@@ -70,6 +70,7 @@ const Step1 = ({ nextStep, loginData, setLoginData }) => {
                     defaultValue=""
                     required={true}
                     className={classes.textField}
+                    variant="outline"
                 //   helperText="Some important text"
                 />
                 }
