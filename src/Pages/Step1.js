@@ -18,18 +18,6 @@ const useStyles = makeStyles((theme) => ({
         width: '77vw',
         textAlign: 'center',
     },
-    cssOutlinedInput: {
-    '&$cssFocused $notchedOutline': {
-      borderColor: 'orange !important',
-    }
-  },
-
-  cssFocused: {},
-
-  notchedOutline: {
-    borderWidth: '1px',
-    borderColor: 'orange !important'
-  },
 
 }));
 
@@ -81,9 +69,9 @@ const Step1 = ({ nextStep, loginData, setLoginData }) => {
                     defaultValue=""
                     required={true}
                     className={classes.textField}
-                    
+                //   helperText="Some important text"
                 />
-                
+                }
                 </InputMask>
             </div>
         
