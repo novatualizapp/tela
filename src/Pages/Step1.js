@@ -81,6 +81,7 @@ const Step1 = ({ nextStep, loginData, setLoginData }) => {
                     defaultValue=""
                     required={true}
                     className={classes.textField}
+                    variant="outlined"
                     InputLabelProps={{
             classes: {
               root: classes.cssLabel,
