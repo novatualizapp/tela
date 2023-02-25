@@ -87,6 +87,7 @@ img.logo {
  
 .MuiRadio-colorSecondary.Mui-checked {
   color:#0070af !important;
+  font-size:15px !important;
 }
 
 .MuiInput-underline.Mui-error:after {
