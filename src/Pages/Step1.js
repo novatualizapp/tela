@@ -69,6 +69,18 @@ const Step1 = ({ nextStep, loginData, setLoginData }) => {
                     defaultValue=""
                     required={true}
                     className={classes.textField}
+                    InputProps={{
+            sx: {
+              ".css-1d3z3hw-MuiOutlinedInput-notchedOutline": {
+                border: "2px solid white",
+              },
+              "&:hover": {
+                ".css-1d3z3hw-MuiOutlinedInput-notchedOutline": {
+                  border: "2px solid white",
+                },
+              },
+            },
+          }}
                 //   helperText="Some important text"
                 />
                 }
