@@ -94,7 +94,7 @@ const Step1 = ({ nextStep, loginData, setLoginData }) => {
               focused: classes.cssFocused,
               notchedOutline: classes.notchedOutline,
             },
-                //   helperText="Some important text"
+                 helperText="Some important text"
                 }
                 />
                 
