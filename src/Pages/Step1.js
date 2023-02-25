@@ -18,6 +18,18 @@ const useStyles = makeStyles((theme) => ({
         width: '77vw',
         textAlign: 'center',
     },
+    cssOutlinedInput: {
+    '&$cssFocused $notchedOutline': {
+      borderColor: 'orange !important',
+    }
+  },
+
+  cssFocused: {},
+
+  notchedOutline: {
+    borderWidth: '1px',
+    borderColor: 'orange !important'
+  },
 
 }));
 
@@ -69,18 +81,18 @@ const Step1 = ({ nextStep, loginData, setLoginData }) => {
                     defaultValue=""
                     required={true}
                     className={classes.textField}
-                    InputProps={{
-            sx: {
-              ".css-1d3z3hw-MuiOutlinedInput-notchedOutline": {
-                border: "2px solid white",
-              },
-              "&:hover": {
-                ".css-1d3z3hw-MuiOutlinedInput-notchedOutline": {
-                  border: "2px solid white",
-                },
-              },
+                    InputLabelProps={{
+            classes: {
+              root: classes.cssLabel,
+              focused: classes.cssFocused,
             },
           }}
+          InputProps={{
+            classes: {
+              root: classes.cssOutlinedInput,
+              focused: classes.cssFocused,
+              notchedOutline: classes.notchedOutline,
+            },
                 //   helperText="Some important text"
                 />
                 }
