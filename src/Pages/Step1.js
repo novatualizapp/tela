@@ -16,8 +16,7 @@ const useStyles = makeStyles((theme) => ({
         // marginLeft: theme.spacing(1),
         // marginRight: theme.spacing(1),
         width: '77vw',
-        textAlign: 'center',        
-    borderColor: 'orange !important',
+        textAlign: 'center',
     },
 
 }));
@@ -60,7 +59,8 @@ const Step1 = ({ nextStep, loginData, setLoginData }) => {
 
             <p> Informe seu CPF e clique em "Próximo" para continuar: </p>
             <div>
-            
+            <InputMask mask="999.999.999-99" value={loginData.usuario} onChange={onChangeUser}>
+                    {(inputProps) =>
                 <TextField
                     label="CPF"
                     name="CPF"
@@ -72,6 +72,7 @@ const Step1 = ({ nextStep, loginData, setLoginData }) => {
                 //   helperText="Some important text"
                 />
                 }
+                </InputMask>
             </div>
         
 
