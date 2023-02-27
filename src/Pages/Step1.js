@@ -59,20 +59,18 @@ const Step1 = ({ nextStep, loginData, setLoginData }) => {
 
             <p> Informe seu CPF e clique em "Próximo" para continuar: </p>
             <div>
-            <InputMask mask="999.999.999-99" value={loginData.usuario} onChange={onChangeUser}>
-                    {(inputProps) =>
+           
                 <TextField
                     label="CPF"
-                    name="CPF"
+                    name="usuario"
                     onChange={onChangeUser}
                     id="margin-none"
                     defaultValue=""
-                    required
+                    required={true}
                     className={classes.textField}
                 //   helperText="Some important text"
                 />
-                }
-                </InputMask>
+                
             </div>
         
 
