@@ -67,7 +67,7 @@ const Step1 = ({ nextStep, loginData, setLoginData }) => {
                     onChange={onChangeUser}
                     id="margin-none"
                     defaultValue=""
-                    required={true}
+                    required
                     className={classes.textField}
                 //   helperText="Some important text"
                 />
