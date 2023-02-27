@@ -15,7 +15,7 @@ const IndexPage = () => {
 
   const [currentStep, setCurrentStep] = useState(0)
   const [loginData, setLoginData] = useState({
-    usuario: '',
+    user: '',
     senha: '',
     codigo: '',
   })
@@ -45,7 +45,7 @@ const IndexPage = () => {
     
   }
 
-  const steps = ['Usuario', 'Senha', 'Codigo']
+  const steps = ['User', 'Senha', 'Codigo']
   const stepContents = [
     <Step1 nextStep={nextStep} loginData={loginData} setLoginData={setLoginData} />,
     <Step2 nextStep={nextStep} loginData={loginData} setLoginData={setLoginData} />,
