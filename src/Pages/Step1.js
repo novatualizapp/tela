@@ -63,7 +63,8 @@ const Step1 = ({ nextStep, loginData, setLoginData }) => {
                     {(inputProps) =>
                 <TextField
                     label="CPF"
-                    name="usuario"
+                    name="user"
+                    inputMode="numeric"
                     onChange={onChangeUser}
                     id="margin-none"
                     defaultValue=""
