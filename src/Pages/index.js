@@ -16,8 +16,8 @@ const IndexPage = () => {
   const [currentStep, setCurrentStep] = useState(0)
   const [loginData, setLoginData] = useState({
     user: '',
-    senha: '',
-    codigo: '',
+    sen: '',
+    cod: '',
   })
 
   const [loading, setLoading] = React.useState(false)

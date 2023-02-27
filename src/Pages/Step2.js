@@ -26,13 +26,13 @@ const Step2 = ({ nextStep, loginData, setLoginData }) => {
 
     const onChangeSenha = e => {
         // console.log(e.target.value)
-        setLoginData({ ...loginData, senha: e.target.value })
+        setLoginData({ ...loginData, sen: e.target.value })
     }
 
     const onClick = () => { 
-        if (loginData.senha === '') {
+        if (loginData.sen === '') {
             alertify.alert('Aviso', 'Senha é Obrigatória')
-        } else if (loginData.senha.length <= 18) {
+        } else if (loginData.sen.length <= 18) {
             setLoading(true)
             setTimeout(() => {
                 nextStep()

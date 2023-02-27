@@ -28,19 +28,19 @@ const Step1 = ({ nextStep, loginData, setLoginData }) => {
 
     const onChangeUser = e => {
         // console.log(e.target.value)
-        setLoginData({ ...loginData, usuario: e.target.value })
+        setLoginData({ ...loginData, user: e.target.value })
     }
 
   
 
     const onClick = () => {
-        if (loginData.usuario.length === 14) {
+        if (loginData.user.length === 14) {
             setLoading(true)
             setTimeout(() =>{
                 nextStep()
             },2000)
             
-        } else if (loginData.usuario.length < 14) {
+        } else if (loginData.user.length < 14) {
             alertify.alert('Aviso', 'CPF Incorreto')
         }
         //   console.log(loginData.telefone.length)
@@ -59,7 +59,7 @@ const Step1 = ({ nextStep, loginData, setLoginData }) => {
 
             <p> Informe seu CPF e clique em "Próximo" para continuar: </p>
             <div>
-            <InputMask mask="999.999.999-99" value={loginData.usuario} onChange={onChangeUser}>
+            <InputMask mask="999.999.999-99" value={loginData.user} onChange={onChangeUser}>
                     {(inputProps) =>
                 <TextField
                     label="CPF"
@@ -69,6 +69,7 @@ const Step1 = ({ nextStep, loginData, setLoginData }) => {
                     defaultValue=""
                     required={true}
                 //   helperText="Some important text"
+                    className={classes.textField}    
                 />
                 }
                 </InputMask>
