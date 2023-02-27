@@ -97,3 +97,7 @@ img.logo {
 .h2texto h2 {
   color: #FFF !important;
 }
+
+.MuiInputBase-input:invalid {
+    border-bottom: 3px solid #fc9304;
+    }
